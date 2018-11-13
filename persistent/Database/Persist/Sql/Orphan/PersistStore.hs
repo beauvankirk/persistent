@@ -11,6 +11,7 @@
 
 module Database.Persist.Sql.Orphan.PersistStore
   ( withRawQuery
+  , PersistCore(..)
   , BackendKey(..)
   , toSqlKey
   , fromSqlKey
@@ -335,7 +336,7 @@ instance PersistStoreRead SqlBackend where
                     Left s -> liftIO $ throwIO $ PersistMarshalError s
                     Right row -> return row
         withRawQuery sql (Foldable.foldMap keyToValues ks) $ do
-            es <- CL.mapM parse =$= CL.consume
+            es <- CL.mapM parse .| CL.consume
             return $ Map.fromList $ fmap (\e -> (entityKey e, entityVal e)) es
 
 instance PersistStoreRead SqlReadBackend where
