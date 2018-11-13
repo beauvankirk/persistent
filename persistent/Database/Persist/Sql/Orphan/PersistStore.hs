@@ -10,12 +10,11 @@
 {-# OPTIONS_GHC -fno-warn-unused-imports #-}
 
 module Database.Persist.Sql.Orphan.PersistStore
-  ( PersistCore (BackendKey)
-  , SqlBackend (..)
+  (SqlBackend (..)
   , SqlReadBackend (..)
   , SqlWriteBackend (..)
-  , withRawQuery
-  -- , BackendKey(..)
+  , PersistCore(..)
+  , BackendKey(..)
   , toSqlKey
   , fromSqlKey
   , getFieldName
@@ -30,7 +29,7 @@ import Database.Persist.Sql.Raw
 import Database.Persist.Sql.Util (
     dbIdColumns, keyAndEntityColumnNames, parseEntityValues, entityColumnNames
   , updatePersistValue, mkUpdateText, commaSeparated)
-import           Data.Conduit (ConduitM, (=$=), (.|), runConduit)
+import           Data.Conduit (ConduitM, (.|), runConduit)
 import qualified Data.Conduit.List as CL
 import qualified Data.Text as T
 import Data.Text (Text, unpack)
@@ -339,7 +338,7 @@ instance PersistStoreRead SqlBackend where
                     Left s -> liftIO $ throwIO $ PersistMarshalError s
                     Right row -> return row
         withRawQuery sql (Foldable.foldMap keyToValues ks) $ do
-            es <- CL.mapM parse =$= CL.consume
+            es <- CL.mapM parse .| CL.consume
             return $ Map.fromList $ fmap (\e -> (entityKey e, entityVal e)) es
 
 instance PersistStoreRead SqlReadBackend where

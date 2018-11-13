@@ -1,0 +1,53 @@
+resolver: nightly-2018-11-13
+name: snapshot-for-ghc-8.6.1
+
+packages:
+# - brittany-0.11.0.0
+# - git: https://github.com/beauvankirk/cabal.git
+#   commit: a5182439c5b34f3091cd5c4facfcd692bdc9da57
+#   subdirs:
+#     - Cabal
+#     - cabal-install
+# - persistent-template-2.5.4
+# - timeplot-1.0.32
+# - persistent-odbc-0.2.0.1
+# - Chart-1.9
+# - Chart-cairo-1.9
+# - cairo-0.13.5.0
+# - safecopy-0.9.4.1
+# - strptime-1.0.10
+# - vcs-revision-0.0.2
+# - git: https://github.com/beauvankirk/process.git
+#   commit: df69fd538988aeaca190328c3d69b4f3fca15b63
+# - git: https://github.com/beauvankirk/http-client.git
+#   commit: 3d9ac606f1615ca63085a7051a761eaf82d19bac
+#   subdirs:
+#     - http-client
+#     - http-client-tls
+# - git: https://github.com/beauvankirk/cabal.git
+#   commit: f4b1b82d203594bfaf01581a803c4201ff5c9961
+#   subdirs:
+#     - Cabal
+#     - cabal-install
+# - cabal-plan-0.4.0.0
+# - directory-1.3.3.1
+# - integer-simple-0.1.1.1
+# - time-1.9.2
+# - xhtml-3000.2.2.1
+# - Win32-2.8.0.0
+# - connection-0.2.8
+# - cryptonite-0.25
+# - tls-1.4.1
+# - asn1-encoding-0.9.5
+# - asn1-types-0.3.2
+# - byteable-0.1.1
+# - x509-1.7.4
+# - x509-store-1.6.6
+# - x509-system-1.6.6
+# - x509-validation-1.6.10
+# - asn1-parse-0.9.4
+# - pem-0.2.4
+# - http-conduit-2.3.2
+
+
+drop-packages:
