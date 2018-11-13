@@ -10,8 +10,12 @@
 {-# OPTIONS_GHC -fno-warn-unused-imports #-}
 
 module Database.Persist.Sql.Orphan.PersistStore
-  ( withRawQuery
-  , BackendKey(..)
+  ( PersistCore (BackendKey)
+  , SqlBackend (..)
+  , SqlReadBackend (..)
+  , SqlWriteBackend (..)
+  , withRawQuery
+  -- , BackendKey(..)
   , toSqlKey
   , fromSqlKey
   , getFieldName
