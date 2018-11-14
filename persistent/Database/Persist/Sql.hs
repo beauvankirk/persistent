@@ -25,7 +25,7 @@ module Database.Persist.Sql
 
 import Database.Persist
 import Database.Persist.Sql.Types
-import Database.Persist.Sql.Types.Internal (IsolationLevel (..))
+import Database.Persist.Sql.Types.Internal (SqlBackend (..), SqlReadBackend (..), SqlWriteBackend (..), IsolationLevel (..))
 import Database.Persist.Sql.Class
 import Database.Persist.Sql.Run hiding (withResourceTimeout)
 import Database.Persist.Sql.Raw
